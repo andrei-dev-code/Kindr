@@ -1,0 +1,116 @@
+/* =========================
+   KINDR - ANIMATIONS
+========================= */
+
+/* Fade in general */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero entrance */
+.hero-content {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Card animation */
+.card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardIn 0.8s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow pulse pentru logo */
+.logo h1 {
+  animation: glowText 3s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(124, 77, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
+  }
+}
+
+/* Background floating glow */
+.bg-glow {
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+/* Button pulse hover effect */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-glow:hover::after {
+  left: 100%;
+}
+
+/* Smooth scroll feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover glow intensificat */
+.card:hover {
+  box-shadow: 0 0 40px rgba(124, 77, 255, 0.25);
+}
+
+/* Text gradient animation (subtil) */
+.gradient-text {
+  background-size: 200% 200%;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
